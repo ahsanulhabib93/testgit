@@ -1,4 +1,4 @@
-name: Lint Flask App
+name: Lint
 
 on:
   push:
@@ -26,9 +26,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    - name: Run pylint linter
-      run: |
-        git fetch origin main --depth=1
-        CHANGED_FILES=$(git diff --name-only FETCH_HEAD HEAD -- '*.py')
-        echo "$CHANGED_FILES"
+    
 
